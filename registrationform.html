@@ -30,6 +30,7 @@
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             width: 100%;
             max-width: 500px;
+            margin-top: 200px;
         }
 
         .container h2 {
@@ -69,18 +70,6 @@
             flex-wrap: wrap;
         }
 
-        .form-group:where(.input-box input, .select-box) {
-            position: relative;
-            height: 50px;
-            width: 100%;
-            outline: none;
-            font-size: 1rem;
-            color: #707070;
-            margin-top: 8px;
-            border: 1px solid #ddd;
-            border-radius: 6px;
-            padding: 0 15px;
-        }
 
         .form-group .events label {
             flex: 1 1 100%;
@@ -111,6 +100,7 @@
         button:hover {
             background-color: #9632cf;
         }
+      
     </style>
     <script>
         function validateForm(event) {
@@ -147,7 +137,7 @@
 <body>
     <div class="container">
         <h2>Registration Form</h2>
-        <form id="registrationForm" action="formaction.html" method="post" onsubmit="validateForm(event)">
+        <form id="registrationForm" action="#" method="post" onsubmit="validateForm(event)">
             <div class="form-group">
                 <label for="name">Name:</label>
                 <input type="text" id="name" name="name" required>
