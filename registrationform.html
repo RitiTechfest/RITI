@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registration2 Form</title>
+    <title>Registration Form</title>
     <style>
         :root {
             --main-color: #9632cf;
@@ -30,7 +30,6 @@
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             width: 100%;
             max-width: 500px;
-            margin-top: 200px;
         }
 
         .container h2 {
@@ -70,6 +69,18 @@
             flex-wrap: wrap;
         }
 
+        .form-group:where(.input-box input, .select-box) {
+            position: relative;
+            height: 50px;
+            width: 100%;
+            outline: none;
+            font-size: 1rem;
+            color: #707070;
+            margin-top: 8px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            padding: 0 15px;
+        }
 
         .form-group .events label {
             flex: 1 1 100%;
@@ -100,44 +111,13 @@
         button:hover {
             background-color: #9632cf;
         }
-      
     </style>
-    <script>
-        function validateForm(event) {
-            event.preventDefault();
 
-            const name = document.getElementById('name').value;
-            const course = document.getElementById('course').value;
-            const semester = document.getElementById('semester').value;
-            const college = document.getElementById('college').value;
-            const whatsapp = document.getElementById('whatsapp').value;
-            const contact = document.getElementById('contact').value;
-            const photo = document.getElementById('photo').files.length;
-            const events = document.querySelectorAll('input[name="events"]:checked').length;
-
-            if (!name || !course || !semester || !college || !whatsapp || !contact || !photo || !events) {
-                alert('Please fill out all fields and select at least one event.');
-                return false;
-            }
-
-            if (!/^\d{10}$/.test(whatsapp)) {
-                alert('Please enter a valid 10-digit WhatsApp number.');
-                return false;
-            }
-
-            if (!/^\d{10}$/.test(contact)) {
-                alert('Please enter a valid 10-digit contact number.');
-                return false;
-            }
-
-            document.getElementById('registrationForm').submit();
-        }
-    </script>
 </head>
 <body>
     <div class="container">
         <h2>Registration Form</h2>
-        <form id="registrationForm" action="#" method="post" onsubmit="validateForm(event)">
+        <form method="post" enctype="multipart/form-data" action="register.php">
             <div class="form-group">
                 <label for="name">Name:</label>
                 <input type="text" id="name" name="name" required>
@@ -148,7 +128,6 @@
             </div>
             <div class="form-group">
                 <label for="semester">Semester:</label>
-                
                 <select id="semester" name="semester" required>
                     <option value="">Select your semester</option>
                     <option value="1">Semester 1</option>
@@ -157,7 +136,6 @@
                     <option value="4">Semester 4</option>
                     <option value="5">Semester 5</option>
                     <option value="6">Semester 6</option>
-                    
                 </select>
             </div>
             <div class="form-group">
@@ -179,38 +157,14 @@
             <div class="form-group">
                 <label>Events to Participate:</label>
                 <div class="events">
-                    <div>
-                        <input type="checkbox" id="event1" name="events" value="event1">
-                        <label for="event1">BACKTRACK BYTES</label>
-                    </div>
-                    <div>
-                        <input type="checkbox" id="event2" name="events" value="event2">
-                        <label for="event2">TYPEBLITZ</label>
-                    </div>
-                    <div>
-                        <input type="checkbox" id="event3" name="events" value="event3">
-                        <label for="event3">ESCAPE ROOM</label>
-                    </div>
-                    <div>
-                        <input type="checkbox" id="event4" name="events" value="event4">
-                        <label for="event4">BINGO</label>
-                    </div>
-                    <div>
-                        <input type="checkbox" id="event5" name="events" value="event5">
-                        <label for="event5">TECHNO CRAFT</label>
-                    </div>
-                    <div>
-                        <input type="checkbox" id="event6" name="events" value="event6">
-                        <label for="event6">CODE AT FIRST SIGHT</label>
-                    </div>
-                    <div>
-                        <input type="checkbox" id="event7" name="events" value="event7">
-                        <label for="event7">POSTER PRODIGY</label>
-                    </div>
-                    <div>
-                        <input type="checkbox" id="event8" name="events" value="event8">
-                        <label for="event8">IT-RIX CRITICAL THINKING</label>
-                    </div>
+                    <div><input type="checkbox" id="event1" name="events[]" value="BACKTRACK BYTES"><label for="event1">BACKTRACK BYTES</label></div>
+                    <div><input type="checkbox" id="event2" name="events[]" value="TYPEBLITZ"><label for="event2">TYPEBLITZ</label></div>
+                    <div><input type="checkbox" id="event3" name="events[]" value="ESCAPE ROOM"><label for="event3">ESCAPE ROOM</label></div>
+                    <div><input type="checkbox" id="event4" name="events[]" value="BINGO"><label for="event4">BINGO</label></div>
+                    <div><input type="checkbox" id="event5" name="events[]" value="TECHNO CRAFT"><label for="event5">TECHNO CRAFT</label></div>
+                    <div><input type="checkbox" id="event6" name="events[]" value="CODE AT FIRST SIGHT"><label for="event6">CODE AT FIRST SIGHT</label></div>
+                    <div><input type="checkbox" id="event7" name="events[]" value="POSTER PRODIGY"><label for="event7">POSTER PRODIGY</label></div>
+                    <div><input type="checkbox" id="event8" name="events[]" value="IT-RIX CRITICAL THINKING"><label for="event8">IT-RIX CRITICAL THINKING</label></div>
                 </div>
             </div>
             <button type="submit">Submit</button>
