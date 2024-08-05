@@ -1,3 +1,14 @@
+/* .atomic-age-regular {
+    font-family: "Atomic Age", system-ui;
+    font-weight: 400;
+    font-style: normal;
+  } */
+  .atomic-age-regular {
+    font-family: "Atomic Age", system-ui;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
 :root {
     --main-color:#9632cf;
     --body-bg: #0f1425;
@@ -19,7 +30,7 @@ html {
 }
 
 body {
-    font-family: "Cairo", sans-serif;
+    /* font-family: "Cairo", sans-serif; */
     background-color: var(--body-bg);
     color: var(--text-color);
     padding-top: var(--nav-height);
@@ -210,6 +221,12 @@ a.movie-item:hover {
     left: 0;
 }
 
+.bg img{
+  position:right;
+  size: 4px;
+
+}
+
 .hero-slide-item-content {
     position: absolute;
     top: 0;
@@ -280,6 +297,11 @@ a.movie-item:hover {
 
 .item-action {
     margin-top: var(--space-top);
+}
+
+#slide box{
+    height: 100px;
+    width: 70px;
 }
 
 .carousel-nav-center {
@@ -355,6 +377,7 @@ a.movie-item:hover {
     overflow: hidden;
     padding-top: 140%;
     cursor: pointer;
+
 }
 
 .movie-item img {

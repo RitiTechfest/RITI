@@ -10,6 +10,8 @@
             --body-bg: #0f1425;
             --box-bg: #221f1f;
             --text-color: #ffffff;
+            --label-color: #ffffff;
+            --label-focus-color: #9632cf;
         }
 
         body {
@@ -25,9 +27,9 @@
 
         .container {
             background-color: var(--box-bg);
-            padding: 20px;
+            padding: 50px;
             border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 0 10px var(--main-color);
             width: 100%;
             max-width: 500px;
             margin-top:200px;
@@ -45,20 +47,35 @@
 
         .form-group label {
             display: block;
-            margin-bottom: 5px;
             color: var(--text-color);
+            transition: all 0.3s ease;
+            pointer-events:none;
+        }
+
+        .form-group input:focus + label,
+        .form-group input:not(:placeholder-shown) + label {
+            top: -12px; /* Moves the label above the input field */
+            left: 10px; /* Adjust to fit your design */
+            font-size: 12px; /* Smaller font size for the label when active */
+        }
+        .form-group label .events{
+            color: #ffffff;
         }
 
         .form-group input,
         .form-group select {
             width: 100%;
-            padding: 8px;
+            padding: px;
             box-sizing: border-box;
             background-color: var(--box-bg);
             color: var(--text-color);
-            border: solid;
-            border-radius: 5px;
-            border-color: white;
+            border: solid 2px;
+            outline: none;
+            border-radius: 2px;
+            border-top: #ffffff 2px;
+            border-right: #ffffff 2px;
+            border-left: #ffffff 2px;
+
         }
 
         .form-group input[type="file"] {
@@ -70,18 +87,6 @@
             flex-wrap: wrap;
         }
 
-        .form-group:where(.input-box input, .select-box) {
-            position: relative;
-            height: 50px;
-            width: 100%;
-            outline: none;
-            font-size: 1rem;
-            color: #707070;
-            margin-top: 8px;
-            border: 1px solid #ddd;
-            border-radius: 6px;
-            padding: 0 15px;
-        }
 
         .form-group .events label {
             flex: 1 1 100%;
