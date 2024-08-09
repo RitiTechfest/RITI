@@ -3,12 +3,12 @@
     font-weight: 400;
     font-style: normal;
   } */
-  .atomic-age-regular {
+  /* .atomic-age-regular {
     font-family: "Atomic Age", system-ui;
     font-weight: 400;
     font-style: normal;
   }
-  
+   */
 :root {
     --main-color:#9632cf;
     --body-bg: #0f1425;
