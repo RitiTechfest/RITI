@@ -1,3 +1,6 @@
+body{
+  background: linear-gradient(65deg,   #3f89aa);
+}
 .img-gallery{
     width:100%;
     margin:100px auto 50px;
@@ -10,11 +13,12 @@
     justify-content: center;
 }
 .img-gallery img{
-    width:15%;
+    width:20%;
     cursor: pointer;
-    margin-left: 60px;
-    margin-right: 50px;
-    border-radius: 8px;
+    margin-left: 0px;
+    margin-right: 1px;
+    border:solid 1px;
+    border-color:white;
   }
   #picture{
     width: 300px;
